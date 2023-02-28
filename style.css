@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+}
+
+@font-face {
+    font-family: ComicNeue;
+    src: url(ComicNeue-Regular.ttf);
+}
+
+body{
+    font-family: ComicNeue;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.box{
+    width: 160px;
+    height: 20px;
+    border: 3px solid black;
+
+}
+.box_loading{
+    height: 100%;
+    width: 100%;
+    animation: loading 3s;
+    background-color: yellowgreen;
+}
+
+@keyframes loading{
+    0% {
+        background-color: yellowgreen;
+        width: 0;
+    }
+    100% {
+        background-color: yellowgreen;
+        width: 160px;
+    }
+}
+
+h1{
+    font-size: 2em;
+    font-weight: bold;
+}
+p{
+    font-size: 1.3em;
+    font-weight: bold;
+}
+#congrats{
+    display: none;
+}
+button{
+    background: rgba(235, 217, 116, 0.671);
+    cursor: pointer;
+    border: none;
+    padding: 16px 32px;
+    color: #FFF;
+    font-size: 24px;
+    font-weight: bold;
+    position: relative;
+    border-radius: 12px;
+}
+button::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        red,blue,deeppink,blue,
+        red,blue,deeppink,blue
+    );
+    background-size: 800%;
+    border-radius: 10px;
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+}
+@keyframes glowing{
+    0%{
+        background-position: 0 0;
+    }
+    50%{
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
